@@ -1,6 +1,6 @@
 # TheCoolestToken: IOTA ERC-721 Project
 ## Introduction
-The goal of this project is to implement an ERC-721 DApp in the IOTA testnet. A custom ERC-721 token called The Coolest Token (TCT) was implemented and deployed both to the Ethereum Rinkeby testnet and to the EVM on the IOTA Wasp testnet.
+The goal of this project is to implement an ERC-721 DApp on the IOTA testnet. A custom ERC-721 token called The Coolest Token (TCT) was implemented and deployed both to the Ethereum Rinkeby testnet and to the EVM on the IOTA Wasp testnet.
 
 ## Development
 The project vas developed using the following software:
@@ -43,7 +43,7 @@ You can also deploy the smart contract in the EVM on the IOTA Wasp testnet using
 ```
 npx hardhat run scripts/deploy.js --network waspRemote
 ```
-You can find an already deployed version of the contract [here](https://explorer.wasp.sc.iota.org/account/0xd4530bbc16b7e95a6bbca4d1208e989e2c610434).
+You can find an already deployed version of the contract [here](https://explorer.wasp.sc.iota.org/account/0x8abe010A639aEE57b566ed08fAc663749b0C1FE5).
 
 ### Deploy to the Rinkeby testnet
 You can also deploy the smart contract to the Rinkeby testnet. Don't forget to create an .infuraKey file with your Infura endpoint in the main directory. Once everything is ready, run the following command:
