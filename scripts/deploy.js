@@ -19,11 +19,32 @@ async function main() {
 
   console.log("Deploying contracts with the account:", deployer.address);
   const coolestToken = await hre.ethers.getContractFactory("TheCoolestToken");
-  const tct = await coolestTokent.deploy();
+  const tct = await coolestToken.deploy();
 
   await tct.deployed();
-
+  saveFrontendFiles(tct)
   console.log("TheCoolestToken deployed to:", tct.address);
+}
+
+function saveFrontendFiles(contract) {
+  const fs = require("fs");
+  const contractsDir = __dirname + "/../app/src/contracts";
+
+  if (!fs.existsSync(contractsDir)) {
+    fs.mkdirSync(contractsDir);
+  }
+
+  fs.writeFileSync(
+    contractsDir + "/contract-address.json",
+    JSON.stringify({ Address: contract.address }, undefined, 2)
+  );
+
+  const tctArtifact = artifacts.readArtifactSync("TheCoolestToken");
+
+  fs.writeFileSync(
+    contractsDir + "/TheCoolestToken.json",
+    JSON.stringify(tctArtifact, null, 2)
+  );
 }
 
 // We recommend this pattern to be able to use async/await everywhere

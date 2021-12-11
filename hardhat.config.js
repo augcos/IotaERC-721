@@ -2,6 +2,7 @@ require("@nomiclabs/hardhat-ganache");
 require("@nomiclabs/hardhat-waffle");
 const { ethers } = require("ethers");
 const fs = require('fs');
+const infuraKey = fs.readFileSync(".infuraKey").toString().trim();
 const mnemonic = fs.readFileSync(".secret").toString().trim();
 const privateKey = ethers.Wallet.fromMnemonic(mnemonic).privateKey;
 
@@ -10,7 +11,6 @@ const privateKey = ethers.Wallet.fromMnemonic(mnemonic).privateKey;
  */
 module.exports = {
   solidity: "0.8.4", 
-  defaultNetwork: "waspRemote",
   networks: {
     hardhat: {
       gasPrice: 0,
@@ -18,7 +18,7 @@ module.exports = {
       baseFeePerGas: 0
     },
     rinkeby: {
-      url: "https://rinkeby.infura.io/v3",
+      url: `https://rinkeby.infura.io/v3/${infuraKey}`,
       accounts: [privateKey]
     },
     waspRemote: {

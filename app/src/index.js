@@ -1,5 +1,6 @@
 import Web3 from "web3";
-import starNotaryArtifact from "../../build/contracts/StarNotary.json";
+import tctArtifact from "./contracts/TheCoolestToken.json";
+import tctAddress from "./contracts/contract-address.json";
 
 const App = {
   web3: null,
@@ -12,10 +13,11 @@ const App = {
     try {
       // get contract instance
       const networkId = await web3.eth.net.getId();
-      const deployedNetwork = starNotaryArtifact.networks[networkId];
+      //const deployedNetwork = tctArtifact.networks[networkId];
+      //console.log(deployedNetwork.address);
       this.meta = new web3.eth.Contract(
-        starNotaryArtifact.abi,
-        deployedNetwork.address,
+        tctArtifact.abi,
+        tctAddress.Address,
       );
 
       // get accounts
@@ -31,20 +33,20 @@ const App = {
     status.innerHTML = message;
   },
 
-  createStar: async function() {
-    const { createStar } = this.meta.methods;
-    const name = document.getElementById("starName").value;
-    const id = document.getElementById("starId").value;
-    await createStar(name, id).send({from: this.account});
-    App.setStatus("New Star Owner is " + this.account + ".");
+  createTCT: async function() {
+    const { createTCT } = this.meta.methods;
+    const name = document.getElementById("TCT Name").value;
+    const id = document.getElementById("TCT ID").value;
+    await createTCT(name, id).send({from: this.account});
+    App.setStatus("New TCT Owner is " + this.account + ".");
   },
 
   // Implement Task 4 Modify the front end of the DAPP
   lookUp: async function (){
-    let { lookUptokenIdToStarInfo } = this.meta.methods;
-    let tokenId = document.getElementById("lookid").value;
-    let nameToken = await lookUptokenIdToStarInfo(tokenId).call();
-    App.setStatus("The token with the the ID " + tokenId + " has the name " + nameToken + ".");
+    let { lookUpTCTInfo } = this.meta.methods;
+    let tokenID = document.getElementById("lookid").value;
+    let nameToken = await lookUpTCTInfo(tokenID).call();
+    App.setStatus("The TCT with the the ID " + tokenID + " has the name " + nameToken + ".");
   }
 
 };
