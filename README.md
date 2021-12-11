@@ -57,8 +57,7 @@ You can run the frontend using the following command:
 ```
 npm run dev
 ```
-You will need to have metamask connected to the network that you last deployed your smart contract to. You can now interact with the smart contract. If you just cloned the repository to your local system, the code has been configured to connect to a deployed version of the contract on the IOTA testnet. You  see that deploying and using the IOTA testnet is complete free! Enjoy your feeless experience.
-can
+You will need to have metamask connected to the network that you last deployed your smart contract to. You can now interact with the smart contract. You will see that deploying and using the IOTA testnet is complete free! Enjoy your feeless experience.
 
 ## Next steps
 Deployment to a local Wasp node has been already implemented in the code (waspLocal in the hardhat.config.json), but testing has yet to be perfomed. You can install a Wasp node using the guide from the [IOTA wiki](https://wiki.iota.org/smart-contracts/guide/chains_and_nodes/running-a-node), or install a GoShimmer + Wasp node combination from [this repository](https://github.com/iotaledger/wasp/tree/add_docker_test_net).
