@@ -55,7 +55,7 @@ You can find an already deployed version of the contract [here](https://rinkeby.
 ## Interact with the deployed Smart Contract
 You can run the frontend using the following command:   
 ```
-npm run dev
+cd app && npm run dev
 ```
 You will need to have metamask connected to the network that you last deployed your smart contract to. You can now interact with the smart contract. You will see that deploying and using the IOTA testnet is complete free! Enjoy your feeless experience.
 
