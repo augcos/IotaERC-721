@@ -1,6 +1,6 @@
 # TheCoolestToken: IOTA ERC-721 Project
 ## Introduction
-The goal of this project is to implement an ERC-721 DApp on the IOTA testnet. A custom ERC-721 token called The Coolest Token (TCT) was implemented and deployed both to the Ethereum Rinkeby testnet and to the EVM on the IOTA Wasp testnet.
+The goal of this project is to implement an ERC-721 token on the IOTA testnet. A custom ERC-721 token called The Coolest Token (TCT) was implemented and deployed both to the Ethereum Rinkeby testnet and to the EVM on the IOTA Wasp testnet.
 
 ## Development
 The project vas developed using the following software:
